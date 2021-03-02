@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Skripsi Yunus</title>
+        <link rel="stylesheet" href="Web_UI.css">
+        <script src="Web_Script.js"></script>
+        <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"</script></script>
+        <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script type="text/javascript" type="text/javascript">
+          var ros = new ROSLIB.Ros({
+            url : 'ws://localhost:9090'
+          });
+
+          ros.on('connection', function() {
+            document.getElementById("status").innerHTML = "Connected";
+          });
+
+          ros.on('error', function(error) {
+            document.getElementById("status").innerHTML = "Error";
+          });
+
+          ros.on('close', function() {
+            document.getElementById("status").innerHTML = "Closed";
+          });
+        </script>
+          
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Welcome Yunus</h1>
+            <p id="status">Status</p>
+            <form name="loginform">
+                <label>Username</label><br>
+                <input type="text" name="uname" autocomplete="off"><br>
+                <label>Password</label><br>
+                <input type="password" name="passwd"><br>
+                <button type="button" onclick="validation()">Log In</button>
+            </form>
+        </div>
+    </body>
+</html>
