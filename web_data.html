@@ -2,24 +2,24 @@
 <html>
     <head>
         <title>Skripsi Yunus</title>
-        <script src="web_js.js"></script>
-        <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
-        <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script src="plot/plotly-latest.min.js"></script>
+        <script type="text/javascript" src="roslib/eventemitter2.min.js"></script>
+        <script type="text/javascript" src="roslib/roslib.min.js"></script>
         <script type="text/javascript" type="text/javascript">
             var ros = new ROSLIB.Ros({
               url : 'ws://localhost:9090'
             });
   
             ros.on('connection', function() {
-              document.getElementById("value_2").innerHTML = "Connected";
+              console.log('Connected to websocket server.');
             });
   
             ros.on('error', function(error) {
-              document.getElementById("value_2").innerHTML = "Error";
+              console.log('Error connecting to websocket server: ', error);
             });
   
             ros.on('close', function() {
-              document.getElementById("value_2").innerHTML = "Closed";
+              console.log('Connection to websocket server closed.');
             });
 
             var listener = new ROSLIB.Topic({
@@ -28,8 +28,16 @@
                 messageType : 'std_msgs/String'
             });
 
+            var listener2 = new ROSLIB.Topic({
+                ros : ros,
+                name : '/chatter2',
+                messageType : 'std_msgs/String'
+            });
+            var str_1, str_2;
+
             listener.subscribe(function(m) {
-                document.getElementById("value_1").innerHTML = m.data;
+                str_1 = m.data;
+                document.getElementById("value_1").innerHTML = str_1;
             });
           </script>
     </head>
@@ -47,6 +55,30 @@
         <tr>
             <td id="Data_2">data2</td>
             <td id="value_2">value2</td>
+        </tr>
+        <tr>
+          <td>
+            <div id="chart"></div>
+            <script>
+              Plotly.plot('chart',[{
+                y:[parseFloat(str_1)],
+                type:'line'
+              }]);
+              
+              var count = 0;
+              setInterval(function() {
+                Plotly.extendTraces('chart', { y: [[parseFloat(str_1)]] }, [0]);
+                count++;
+                if(count > 50) {
+                  Plotly.relayout('chart',{
+                    xaxis: {
+                      range: [count-50,count]
+                    }
+                  });
+                }
+              }, 200);
+            </script>
+          </td>
         </tr>
        </table> 
     </body>

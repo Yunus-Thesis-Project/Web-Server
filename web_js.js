@@ -12,14 +12,3 @@ function validation(){
         return false;
     }
 }
-
-var listener = new ROSLIB.Topic({
-    ros : ros,
-    name : '/chatter',
-    messageType : 'std_msgs/String'
-});
-
-listener.subscribe(function(m) {
-    document.getElementById("value_1").innerHTML = "Waduh";
-    listener.unsubscribe();
-});
