@@ -2,10 +2,9 @@
 <html>
     <head>
         <title>Skripsi Yunus</title>
-        <link rel="stylesheet" href="Web_UI.css">
-        <script src="Web_Script.js"></script>
-        <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"</script></script>
-        <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <link rel="stylesheet" href="web_css.css">
+        <!-- <script src="web_js.js"></script> -->
+        <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
         <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
         <script type="text/javascript" type="text/javascript">
           var ros = new ROSLIB.Ros({
@@ -30,13 +29,23 @@
     <body>
         <div class="container">
             <h1>Welcome Yunus</h1>
-            <p id="status">Status</p>
+            
             <form name="loginform">
                 <label>Username</label><br>
                 <input type="text" name="uname" autocomplete="off"><br>
                 <label>Password</label><br>
                 <input type="password" name="passwd"><br>
-                <button type="button" onclick="validation()">Log In</button>
+                <button type="button" name="login_btn" onclick="validation()">Log In</button>
+                <table style="width: 100%;padding-top: 10px;color: azure;">
+                  <tr>
+                    <td>
+                      <p>Connection Status : </p>
+                    </td>
+                    <td>
+                      <span id="status">Status</span>
+                    </td>
+                  </tr>
+                </table>
             </form>
         </div>
     </body>

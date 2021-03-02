@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Skripsi Yunus</title>
+        <script src="web_js.js"></script>
+        <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+        <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script type="text/javascript" type="text/javascript">
+            var ros = new ROSLIB.Ros({
+              url : 'ws://localhost:9090'
+            });
+  
+            ros.on('connection', function() {
+              document.getElementById("value_2").innerHTML = "Connected";
+            });
+  
+            ros.on('error', function(error) {
+              document.getElementById("value_2").innerHTML = "Error";
+            });
+  
+            ros.on('close', function() {
+              document.getElementById("value_2").innerHTML = "Closed";
+            });
+
+            var listener = new ROSLIB.Topic({
+                ros : ros,
+                name : '/chatter',
+                messageType : 'std_msgs/String'
+            });
+
+            listener.subscribe(function(m) {
+                document.getElementById("value_1").innerHTML = m.data;
+            });
+          </script>
+    </head>
+    
+    <body>
+       <table style="width: 100%;">
+        <tr>
+            <th>Data</th>
+            <th>Nilai</th>
+        </tr>
+        <tr>
+            <td id="Data_1">data1</td>
+            <td id="value_1">value1</td>
+        </tr>
+        <tr>
+            <td id="Data_2">data2</td>
+            <td id="value_2">value2</td>
+        </tr>
+       </table> 
+    </body>
+</html>
