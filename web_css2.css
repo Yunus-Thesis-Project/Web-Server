@@ -4,41 +4,41 @@ body{
 
 h1{
     text-align: center;
-    margin-top: 3%;  
+    margin-top: 3vw;  
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: 2.3vw;
 }
 
 #datetime{
     text-align: right;
     color: #fdef97;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: 1vw;
     margin-right: 3%;
 }
 
 .table1{
 
-    left: 50%;
-    width: 90%;
+    left: 50vw;
+    width: 90vw;
     margin-left: auto;
     margin-right: auto;
 }
 
 .data{
     background-color: #1f2d55;
-    width: 500px;
-    height: 300px;
+    width: 20vw;
+    height: 10vw;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .data header{
     text-align: center;
-    padding-top: 7%;
+    padding-top: 1.3vw;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 30px;
+    font-size: 1.3vw;
 }
 
 .data #p_1{
@@ -46,28 +46,28 @@ h1{
     padding-top: 5%;
     color: rgb(145, 255, 0);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: 2vw;
 }
 .data #p_2{
     text-align: center;
     padding-top: 5%;
     color: rgb(0, 182, 127);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: 2vw;
 }
 .data #p_3{
     text-align: center;
     padding-top: 5%;
     color: rgb(133, 162, 226);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: 2vw;
 }
 .data #p_4{
     text-align: center;
     padding-top: 5%;
     color: rgb(216, 24, 24);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: 42vw;
 }
 
 
