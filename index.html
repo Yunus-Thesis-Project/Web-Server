@@ -3,12 +3,12 @@
     <head>
         <title>Skripsi Yunus</title>
         <link rel="stylesheet" href="web_css.css">
-        <!-- <script src="web_js.js"></script> -->
-        <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
-        <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script src="web_js.js"></script>
+        <script type="text/javascript" src="roslib/eventemitter2.min.js"></script>
+        <script type="text/javascript" src="roslib/roslib.min.js"></script>
         <script type="text/javascript" type="text/javascript">
           var ros = new ROSLIB.Ros({
-            url : 'ws://localhost:9090'
+            url : 'ws://192.168.43.244:9090'
           });
 
           ros.on('connection', function() {

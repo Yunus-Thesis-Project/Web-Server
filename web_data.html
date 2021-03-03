@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head>      
         <title>Skripsi Yunus</title>
+        <script></script>
         <script src="plot/plotly-latest.min.js"></script>
         <script type="text/javascript" src="roslib/eventemitter2.min.js"></script>
         <script type="text/javascript" src="roslib/roslib.min.js"></script>
         <script type="text/javascript" type="text/javascript">
             var ros = new ROSLIB.Ros({
-              url : 'ws://localhost:9090'
+              url : 'ws://192.168.43.244:9090'
             });
   
             ros.on('connection', function() {
@@ -20,6 +21,12 @@
   
             ros.on('close', function() {
               console.log('Connection to websocket server closed.');
+            });
+            
+            var imageTopic= new ROSLIB.Topic({
+              ros : ros,
+              name : '/image',
+              messageType : 'sensor_msgs/CompressedImage'
             });
 
             var listener = new ROSLIB.Topic({
@@ -39,6 +46,12 @@
                 str_1 = m.data;
                 document.getElementById("value_1").innerHTML = str_1;
             });
+
+            imageTopic.subscribe(function(m) {
+              var imagedata = "data:image/jpeg;base64," + m.data;
+              document.getElementById('stream').setAttribute('src', imagedata);
+            });
+
           </script>
     </head>
     
@@ -78,6 +91,11 @@
                 }
               }, 200);
             </script>
+          </td>
+          <td>
+            <div>
+              <p><img id="stream" width="600px"></p>
+            </div>
           </td>
         </tr>
        </table> 
