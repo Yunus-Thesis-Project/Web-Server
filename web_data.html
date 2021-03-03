@@ -10,26 +10,60 @@
     </head>
     
     <body>
+      <h1>Data Visualization</h1>
+      <p id="datetime">Date Time Status</p>
+      <script>
+        var d = new Date();
+        document.getElementById("datetime").innerHTML = d.toDateString();
+      </script>
+      
       <div class="container1">
         <table class="table1">
           <tr>
+            <td id="data_1">
+              <div class="data">
+                <header>Data Title</header>
+                <p>Data Value</p>
+              </div>
+            </td>
+            <td id="data_2">
+              <div class="data">
+                <header>Data Title</header>
+                <p>Data Value</p>
+              </div>
+            </td>
+            <td id="data_3">
+              <div class="data">
+                <header>Data Title</header>
+                <p>Data Value</p>
+              </div>
+            </td>
+            <td id="data_4">
+              <div class="data">
+                <header>Data Title</header>
+                <p>Data Value</p>
+              </div>
+            </td>
+          </tr>
+          <!-- <tr>
               <td id="Data_1">data1</td>
               <td id="value_1">value1</td>
           </tr>
           <tr>
               <td id="Data_2">data2</td>
               <td id="value_2">value2</td>
-          </tr>
+          </tr> -->
          </table> 
       </div>
       
-      <div class="container1">
+      <div class="container2">
         <table class="table2">
           <tr>
             <td>
               <div id="chart"></div>
               <script>
                 Plotly.plot('chart',[{
+                  color: 'rgb(164, 194, 244)',
                   y:[parseFloat(str_1)],
                   type:'line'
                 }]);
@@ -50,7 +84,7 @@
             </td>
             <td>
               <div>
-                <p><img id="stream" width="600px"></p>
+                <p><img id="stream" width="700px"></p>
               </div>
             </td>
           </tr>
