@@ -2,102 +2,61 @@
 <html>
     <head>      
         <title>Skripsi Yunus</title>
-        <script></script>
+        <link rel="stylesheet" href="web_css2.css">
         <script src="plot/plotly-latest.min.js"></script>
         <script type="text/javascript" src="roslib/eventemitter2.min.js"></script>
         <script type="text/javascript" src="roslib/roslib.min.js"></script>
-        <script type="text/javascript" type="text/javascript">
-            var ros = new ROSLIB.Ros({
-              url : 'ws://192.168.43.244:9090'
-            });
-  
-            ros.on('connection', function() {
-              console.log('Connected to websocket server.');
-            });
-  
-            ros.on('error', function(error) {
-              console.log('Error connecting to websocket server: ', error);
-            });
-  
-            ros.on('close', function() {
-              console.log('Connection to websocket server closed.');
-            });
-            
-            var imageTopic= new ROSLIB.Topic({
-              ros : ros,
-              name : '/image',
-              messageType : 'sensor_msgs/CompressedImage'
-            });
-
-            var listener = new ROSLIB.Topic({
-                ros : ros,
-                name : '/chatter',
-                messageType : 'std_msgs/String'
-            });
-
-            var listener2 = new ROSLIB.Topic({
-                ros : ros,
-                name : '/chatter2',
-                messageType : 'std_msgs/String'
-            });
-            var str_1, str_2;
-
-            listener.subscribe(function(m) {
-                str_1 = m.data;
-                document.getElementById("value_1").innerHTML = str_1;
-            });
-
-            imageTopic.subscribe(function(m) {
-              var imagedata = "data:image/jpeg;base64," + m.data;
-              document.getElementById('stream').setAttribute('src', imagedata);
-            });
-
-          </script>
+        <script src="web_js2.js"></script>
     </head>
     
     <body>
-       <table style="width: 100%;">
-        <tr>
-            <th>Data</th>
-            <th>Nilai</th>
-        </tr>
-        <tr>
-            <td id="Data_1">data1</td>
-            <td id="value_1">value1</td>
-        </tr>
-        <tr>
-            <td id="Data_2">data2</td>
-            <td id="value_2">value2</td>
-        </tr>
-        <tr>
-          <td>
-            <div id="chart"></div>
-            <script>
-              Plotly.plot('chart',[{
-                y:[parseFloat(str_1)],
-                type:'line'
-              }]);
-              
-              var count = 0;
-              setInterval(function() {
-                Plotly.extendTraces('chart', { y: [[parseFloat(str_1)]] }, [0]);
-                count++;
-                if(count > 50) {
-                  Plotly.relayout('chart',{
-                    xaxis: {
-                      range: [count-50,count]
-                    }
-                  });
-                }
-              }, 200);
-            </script>
-          </td>
-          <td>
-            <div>
-              <p><img id="stream" width="600px"></p>
-            </div>
-          </td>
-        </tr>
-       </table> 
+      <div class="container1">
+        <table class="table1">
+          <tr>
+              <td id="Data_1">data1</td>
+              <td id="value_1">value1</td>
+          </tr>
+          <tr>
+              <td id="Data_2">data2</td>
+              <td id="value_2">value2</td>
+          </tr>
+         </table> 
+      </div>
+      
+      <div class="container1">
+        <table class="table2">
+          <tr>
+            <td>
+              <div id="chart"></div>
+              <script>
+                Plotly.plot('chart',[{
+                  y:[parseFloat(str_1)],
+                  type:'line'
+                }]);
+                
+                var count = 0;
+                setInterval(function() {
+                  Plotly.extendTraces('chart', { y: [[parseFloat(str_1)]] }, [0]);
+                  count++;
+                  if(count > 50) {
+                    Plotly.relayout('chart',{
+                      xaxis: {
+                        range: [count-50,count]
+                      }
+                    });
+                  }
+                }, 200);
+              </script>
+            </td>
+            <td>
+              <div>
+                <p><img id="stream" width="600px"></p>
+              </div>
+            </td>
+          </tr>
+         </table>
+      </div>
+       
+       
     </body>
 </html>
