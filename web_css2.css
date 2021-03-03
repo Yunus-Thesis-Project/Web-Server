@@ -35,9 +35,39 @@ h1{
 
 .data header{
     text-align: center;
-    padding-top: 5%;
+    padding-top: 7%;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
+    font-size: 30px;
 }
+
+.data #p_1{
+    text-align: center;
+    padding-top: 5%;
+    color: rgb(145, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+.data #p_2{
+    text-align: center;
+    padding-top: 5%;
+    color: rgb(0, 182, 127);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+.data #p_3{
+    text-align: center;
+    padding-top: 5%;
+    color: rgb(133, 162, 226);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+.data #p_4{
+    text-align: center;
+    padding-top: 5%;
+    color: rgb(216, 24, 24);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+
 

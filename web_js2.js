@@ -35,7 +35,12 @@ var str_1, str_2;
 
 listener.subscribe(function(m) {
     str_1 = m.data;
-    document.getElementById("value_1").innerHTML = str_1;
+    document.getElementById("p_2").innerHTML = str_1;
+});
+
+listener2.subscribe(function(m) {
+    str_2 = m.data;
+    document.getElementById("p_1").innerHTML = str_2;
 });
 
 imageTopic.subscribe(function(m) {
