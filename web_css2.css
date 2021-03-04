@@ -18,15 +18,18 @@ h1{
     margin-right: 3%;
 }
 
-.table1{
+.container1{
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    left: 50vw;
-    width: 90vw;
+.table1{
     margin-left: auto;
     margin-right: auto;
 }
 
 .data{
+    margin: 1vw;
     background-color: #1f2d55;
     width: 20vw;
     height: 10vw;
@@ -67,7 +70,66 @@ h1{
     padding-top: 5%;
     color: rgb(216, 24, 24);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 42vw;
+    font-size: 2vw;
 }
 
+.container2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subdata{
+    margin: 1vw;
+    background-color: #1f2d55;
+    width: 30vw;
+    height: 20vw;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.subdata header{
+    text-align: center;
+    padding-top: 1.3vw;
+    padding-bottom: 1vw;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3vw;
+}
+
+.subdata #p_5{
+    margin: 0%;
+    text-align: center;
+    color: rgb(145, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vw;
+}
+
+.subdata #p_6{
+    margin: 0%;
+    text-align: center;
+    color: rgb(3, 145, 109);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vw;
+}
+
+.subdata #p_7{
+    margin: 0%;
+    text-align: center;
+    color: rgb(150, 148, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vw;
+}
+
+.subdata #subtitle{
+    margin: 0%;
+    padding-top: 5%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1vw;
+}
 

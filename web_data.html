@@ -53,8 +53,19 @@
           <table class="table2">
             <tr>
               <td>
-                <div id="chart"></div>
-                <script>
+                <div class="subdata">
+                  <header>Data Title</header>
+                  <p id="subtitle">Data Subtitle</p>
+                  <p id="p_5">Data Value</p>
+                  <p id="subtitle">Data Subtitle</p>
+                  <p id="p_6">Data Value</p>
+                  <p id="subtitle">Data Subtitle</p>
+                  <p id="p_7">Data Value</p>
+                </div>
+              </td>
+              <td>
+                <div class="subdata" id="chart"></div>
+                <!-- <script>
                   Plotly.plot('chart',[{
                     color: 'rgb(164, 194, 244)',
                     y:[parseFloat(str_1)],
@@ -73,11 +84,11 @@
                       });
                     }
                   }, 200);
-                </script>
+                </script> -->
               </td>
               <td>
-                <div>
-                  <p><img id="stream" width="700px"></p>
+                <div class="subdata">
+                  <img id="stream">
                 </div>
               </td>
             </tr>
