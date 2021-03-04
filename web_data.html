@@ -67,6 +67,7 @@
                 <div class="subdata" id="chart" style="width: 30vw;height: 20vw;"></div>
                 <script>
                   Plotly.plot('chart',[{
+                    x:[parseFloat(str_2)],
                     y:[parseFloat(str_1)],
                     width:550,height:550,
                     type:'lines',
@@ -86,6 +87,17 @@
                         color: 'rgb(255,255,255)'
                       }
                     },
+                    yaxis: {
+                      title: {
+                        text: 'Error',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 18,
+                          color: '#ffffff'
+                        }
+                      },
+                      color: 'rgb(255,0,0)'
+                    },
                     xaxis: {
                       title: {
                         text: 'Time',
@@ -95,31 +107,34 @@
                           color: '#ffffff'
                         }
                       },
-                    },
-                    yaxis: {
-                      title: {
-                        text: 'Error',
-                        font: {
-                          family: 'Courier New, monospace',
-                          size: 18,
-                          color: '#ffffff'
-                        }
-                      }
+                      color: 'rgb(255,0,0)'
                     }
                   });
                   
-                  var count = 0;
+                  // var count = 0;
                   setInterval(function() {
-                    Plotly.extendTraces('chart', { y: [[parseFloat(str_1)]] }, [0]);
-                    count++;
-                    if(count > 50) {
-                      Plotly.relayout('chart',{
-                        xaxis: {
-                          range: [count-50,count]
-                        }
-                      });
-                    }
-                  }, 200);
+                    Plotly.extendTraces('chart', {
+                       x: [[parseFloat(str_2)]], y: [[parseFloat(str_1)]]
+                      }, [0]);
+                    // count++;
+                    Plotly.relayout('chart',{
+                      xaxis: {
+                        range: [parseFloat(str_2)-1000,parseFloat(str_2)],
+                        title: {
+                          text: 'Time',
+                          font: {
+                            family: 'Courier New, monospace',
+                            size: 18,
+                            color: '#ffffff'
+                          }
+                        },
+                        color: 'rgb(255,0,0)'
+                      }
+                    });
+                    // if(count > 100) {
+                    //   clearInterval(interval);
+                    // }
+                  }, 10);
                 </script>
               </td>
               <td>
