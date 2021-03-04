@@ -47,3 +47,17 @@ imageTopic.subscribe(function(m) {
 var imagedata = "data:image/jpeg;base64," + m.data;
 document.getElementById('stream').setAttribute('src', imagedata);
 });
+
+var state = 0
+function start_stop(){
+    state++
+    if(state==2) state=0;
+    if(state%2==1){
+        document.getElementById("p_5").innerHTML = "System Started";
+        document.getElementById("p_5").style.color = '#00ff00';
+    }else{
+        document.getElementById("p_5").innerHTML = "System Stopped";
+        document.getElementById("p_5").style.color = '#ff0000';
+    }
+    
+}

@@ -99,37 +99,33 @@ h1{
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3vw;
 }
+.btn_class{
+    margin-left: 10vw;
+    margin-top: 3vw;
+    padding: 15px 25px;
+    font-size: 1.5vw;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(0, 0, 0);
+    width: 10vw;
+    height: 3vw;
+}
+.btn_class:hover {background-color: #a50e0e}
+.btn_class:active {
+    background-color: #a50e0e;
+    box-shadow: 0 5px rgb(102, 102, 102);
+    transform: translateY(4px);
+  }
 
 .subdata #p_5{
-    margin: 0%;
     text-align: center;
-    color: rgb(145, 255, 0);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2vw;
-}
-
-.subdata #p_6{
-    margin: 0%;
-    text-align: center;
-    color: rgb(3, 145, 109);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2vw;
-}
-
-.subdata #p_7{
-    margin: 0%;
-    text-align: center;
-    color: rgb(150, 148, 255);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2vw;
-}
-
-.subdata #subtitle{
-    margin: 0%;
     padding-top: 5%;
-    text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(216, 24, 24);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1vw;
+    font-size: 2vw;
 }
-

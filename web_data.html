@@ -55,12 +55,8 @@
               <td>
                 <div class="subdata">
                   <header>Data Title</header>
-                  <p id="subtitle">Data Subtitle</p>
-                  <p id="p_5">Data Value</p>
-                  <p id="subtitle">Data Subtitle</p>
-                  <p id="p_6">Data Value</p>
-                  <p id="subtitle">Data Subtitle</p>
-                  <p id="p_7">Data Value</p>
+                  <button class="btn_class" id="btn" onclick=start_stop()>Link Start</button>
+                  <p id="p_5">System Stopped</p>
                 </div>
               </td>
               <td>
@@ -69,7 +65,6 @@
                   Plotly.plot('chart',[{
                     x:[parseFloat(str_2)],
                     y:[parseFloat(str_1)],
-                    width:550,height:550,
                     type:'lines',
                     line: {
                       color: 'rgb(192, 255, 20)',
