@@ -23,13 +23,13 @@
             <tr>
               <td id="data_1">
                 <div class="data">
-                  <header>Set Point (Pixel)</header>
+                  <header>Time (Second)</header>
                   <p id="p_1">Data Value</p>
                 </div>
               </td>
               <td id="data_2">
                 <div class="data">
-                  <header>Object (Pixel)</header>
+                  <header>Target (Pixel)</header>
                   <p id="p_2">Data Value</p>
                 </div>
               </td>
@@ -63,8 +63,8 @@
                 <div class="subdata" id="chart" style="width: 30vw;height: 20vw;"></div>
                 <script>
                   Plotly.plot('chart',[{
-                    x:[parseFloat(str_2)],
-                    y:[parseFloat(str_1)],
+                    x:[parseFloat(timeData)],
+                    y:[parseFloat(targetData)],
                     type:'lines',
                     line: {
                       color: 'rgb(192, 255, 20)',
@@ -109,12 +109,12 @@
                   // var count = 0;
                   setInterval(function() {
                     Plotly.extendTraces('chart', {
-                       x: [[parseFloat(str_2)]], y: [[parseFloat(str_1)]]
+                       x: [[parseFloat(timeData)]], y: [[parseFloat(targetData)]]
                       }, [0]);
                     // count++;
                     Plotly.relayout('chart',{
                       xaxis: {
-                        range: [parseFloat(str_2)-10,parseFloat(str_2)],
+                        range: [parseFloat(timeData)-10,parseFloat(timeData)],
                         title: {
                           text: 'Time',
                           font: {
